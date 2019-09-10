@@ -1,13 +1,16 @@
 import React from 'react'
 
-const ProductListItem =() => {
+import "./ProductListItem.css"
+import { tsPropertySignature } from '@babel/types';
+
+const ProductListItem =(props) => {
     return (
-        <div className="product=list-item"> 
-           <div className="product-title">iPhone X</div>
-           <p className="product-deccription">This is iPhone X</p>
-            <div className="product-features">Type: phone </div>
-            <div className="product-features">Capacity: 64 G</div>
-            <div className="product-price">Price: 500$</div>
+        <div className="product-list-item"> 
+           <div className="product-title">{props.name}</div>
+           <p className="product-description">{props.description}</p>
+            <div className="product-features">Type:{props.type}</div>
+            <div className="product-features">Capacity:{props.capacity}</div>
+            <div className="product-price">Price:{props.price}</div>
             <button className="btn btn-add-to-cart"> Add to cart</button>
         </div>
     )

@@ -4,7 +4,7 @@ import './menu.css'
 
 const Menu = () => {
     return (
-            <div className="col-lg-6">
+            
                 <div className="menu">
                     <ul>
                         <li><a href="/">Home</a></li>
@@ -13,7 +13,6 @@ const Menu = () => {
                         <li><a href="/">Shipping</a></li>
                      </ul>
                 </div>
-            </div>
     )
 }
 

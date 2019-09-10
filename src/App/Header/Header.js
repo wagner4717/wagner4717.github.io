@@ -11,9 +11,15 @@ const Header = () => {
         <header className="header">
             <div className="container">
                 <div className="row">
-                    <Logo/>
-                    <Menu/>
-                    <Cart/>
+                    <div className="col-lg-3">
+                        <Logo/>
+                    </div>
+                    <div className="col-lg-6">
+                        <Menu/>
+                    </div>
+                    <div className="col-lg-3">
+                        <Cart/>
+                    </div>
                 </div>
             </div>
         </header>

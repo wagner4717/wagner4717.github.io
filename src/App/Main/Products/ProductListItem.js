@@ -34,5 +34,8 @@ ProductListItem.propTypes = {
     price: PropTypes.number.isRequired,
 }
 
+ProductListItem.defaultProps = {
+    image: "./images/ipod.png"
+}
 
 export default ProductListItem

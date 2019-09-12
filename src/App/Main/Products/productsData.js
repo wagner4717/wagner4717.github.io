@@ -24,6 +24,7 @@ const productsData = [
         type: "phone",
         capacity:150,
         price: 2000,
+        image: "/images/iPad.png"
     },
     {
         id: 4,
@@ -32,6 +33,7 @@ const productsData = [
         type: "phone",
         capacity:32,
         price: 500,
+        //image: "/images/iPad.png"
     },
 ]
 

@@ -11,7 +11,7 @@ const ProductsList = () => {
             <div className="row">
                 {
                     productsData.map((product) => (
-                        <div className= "col-lg-6" >
+                        <div className= "col-lg-6" key={product.id}>
                         <ProductListItem
                             name={product.name}
                             description={product.description}

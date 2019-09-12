@@ -24,12 +24,14 @@ const ProductListItem =({
 
 ProductListItem.propTypes = {
     name: PropTypes.string.isRequired,
-    description: PropTypes.string.isRequired,
+    description: PropTypes.string,
     type: PropTypes.string.isRequired,
     capacity: PropTypes.number.isRequired,
     price: PropTypes.number.isRequired,
 }
 
-
+ProductListItem.defaultProps = {
+    description: "No description ...",
+}
 
 export default ProductListItem

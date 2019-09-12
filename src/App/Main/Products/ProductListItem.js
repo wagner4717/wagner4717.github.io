@@ -14,8 +14,8 @@ const ProductListItem =({
            <div className="product-title">{name}</div>
            <p className="product-description">{description}</p>
             <div className="product-features">Type: {type}</div>
-            <div className="product-features">Capacity: {capacity}</div>
-            <div className="product-price">Price: {price}</div>
+            <div className="product-features">Capacity: {capacity}G</div>
+            <div className="product-price">Price: {price}$</div>
             <button className="btn btn-add-to-cart"> Add to cart</button>
         </div>
     )
@@ -23,11 +23,11 @@ const ProductListItem =({
 
 
 ProductListItem.propTypes = {
-    name: PropTypes.string,
-    description: PropTypes.string,
-    type: PropTypes.string,
-    capacity: PropTypes.number,
-    price: PropTypes.number,
+    name: PropTypes.string.isRequired,
+    description: PropTypes.string.isRequired,
+    type: PropTypes.string.isRequired,
+    capacity: PropTypes.number.isRequired,
+    price: PropTypes.number.isRequired,
 }
 
 

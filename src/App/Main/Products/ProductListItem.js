@@ -4,15 +4,12 @@ import "./ProductListItem.css"
 
 
 class ProductListItem extends Component {
-    static defaultProps ={
-        description: "No desc"
-    }
     
     render() {
         const {
             name,
             image,
-            description,
+            description = "No desc",
             capacity,
             price,
             type,
@@ -30,7 +27,7 @@ class ProductListItem extends Component {
                 <div className="product-price">Price: {price}$</div>
                 <div className="quantity-input">
                     <button>-</button>
-                    <input type="text" value="1" />
+                    <input type="text" value="1" readOnly/>
                     <button>+</button>
                 </div>
                 <button className="btn btn-add-to-cart"> Add to cart</button>

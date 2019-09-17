@@ -4,7 +4,13 @@ import "./ProductListItem.css"
 
 
 class ProductListItem extends Component {
-    
+  
+    constructor () {
+        super()
+        this.state = {
+            productCount:1
+        }
+    }
     render() {
         const {
             name,
@@ -27,7 +33,7 @@ class ProductListItem extends Component {
                 <div className="product-price">Price: {price}$</div>
                 <div className="quantity-input">
                     <button>-</button>
-                    <input type="text" value="1" readOnly/>
+                    <input type="text" value={this.state.productCount} readOnly/>
                     <button>+</button>
                 </div>
                 <button className="btn btn-add-to-cart"> Add to cart</button>

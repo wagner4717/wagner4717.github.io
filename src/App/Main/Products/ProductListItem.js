@@ -4,12 +4,19 @@ import "./ProductListItem.css"
 
 
 class ProductListItem extends Component {
-  
-    constructor () {
+    constructor() {
         super()
-        this.state = {
-            productCount:1
-        }
+        this.onIncrementClick = this.onIncrementClick.bind(this)
+    }
+    state = {
+        productCount:1
+    }
+
+    onIncrementClick () {
+        this.setState((prevState) => ({
+            productCount: prevState.productCount + 1
+        })
+         )
     }
     render() {
         const {
@@ -34,7 +41,7 @@ class ProductListItem extends Component {
                 <div className="quantity-input">
                     <button>-</button>
                     <input type="text" value={this.state.productCount} readOnly/>
-                    <button>+</button>
+                    <button onClick={this.onIncrementClick}>+</button>
                 </div>
                 <button className="btn btn-add-to-cart"> Add to cart</button>
             </div>

@@ -50,3 +50,21 @@
     padding: 10px 0px;
     margin-bottom: 15px;
 }
+.quantity-input {
+    text-align: center;
+    margin-bottom: 15px;
+}
+.quantity-input button {
+    width: 30px;
+    height: 30px;
+    background-color: grey;
+    border: none;
+    cursor: pointer;
+    color: white;
+}
+.quantity-input button:hover {
+    background-color: black;
+}
+.quantity-input input {
+    height: 30px;
+}

@@ -61,10 +61,12 @@
     border: none;
     cursor: pointer;
     color: white;
+
 }
 .quantity-input button:hover {
     background-color: black;
 }
 .quantity-input input {
     height: 30px;
+    text-align: center;
 }

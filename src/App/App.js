@@ -9,7 +9,7 @@ import Footer from './Footer/Footer'
 
 class App extends Component {
 	state = {
-		cartDate:{
+		cartData:{
 			count:0,
 			price:0,
 		}
@@ -17,7 +17,9 @@ class App extends Component {
 	render(){
 		return(
 			<div>
-			    <Header />
+				<Header 
+				    cartData = {this.state.cartData}
+				/>
 				<Main />
 				<Footer />
 			</div>

@@ -34,6 +34,7 @@ class ProductListItem extends Component {
             capacity,
             price,
             type,
+            addProductToCart,
         } = this.props
 
         return (
@@ -63,7 +64,9 @@ class ProductListItem extends Component {
                     disabled={this.state.productCount >= 10}
                     >+</button>
                 </div>
-                <button className="btn btn-add-to-cart"> Add to cart</button>
+                <button className="btn btn-add-to-cart"
+                    onClick={() => addProductToCart(price,this.state.productCount)}
+                > Add to cart</button>
             </div>
         )
     }

@@ -9,7 +9,7 @@ import Cart from './Cart/Cart'
 
 
 const Header = ({
-    cartData,
+    productsInCart,
 }) => {
     return (
         <header className="header">
@@ -23,7 +23,7 @@ const Header = ({
                     </div>
                     <div className="col-lg-3">
                         <Cart
-                        cartData={cartData}
+                            productsInCart={productsInCart}
                         />
                     </div>
                 </div>

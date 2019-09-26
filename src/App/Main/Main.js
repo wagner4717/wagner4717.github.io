@@ -2,7 +2,8 @@ import React from 'react'
 import ProductsList from './Products/ProductsList'
 
 const Main = ({
-    addProductToCart
+    addProductToCart,
+    cartData
 }) => {
     return (
         <main className="main">
@@ -14,6 +15,7 @@ const Main = ({
                     <div className="col-lg-9">
                     <ProductsList
                          addProductToCart={addProductToCart}
+                         cartData = {cartData}
                     />
                     </div>
                 </div>

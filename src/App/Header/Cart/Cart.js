@@ -1,7 +1,15 @@
 import React from 'react'
 import {keys} from 'lodash'
+import productsData from '../../Main/Products/productsData'
 
 import './cart.css'
+
+const productsMap = productsData.reduce((accObj,product)=>({
+    ...accObj,
+    [product.Id]:product
+}),{})
+
+console.log(productsMap)
 
 const Cart = ({
     productsInCart,

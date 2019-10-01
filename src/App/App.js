@@ -10,16 +10,16 @@ import Footer from './Footer/Footer'
 class App extends Component {
 	state = {
 		productsInCart:{
-			"1":0,
+			"1":1,
 			"2":0,
 		}
 	} 
 
 
-	addProductToCart = (productId,count,...rest) => {
+	addProductToCart = (productId,count) => {
 		this.setState((prevState) => ({
 			productsInCart: {
-				[productId]:count * rest,
+				[productId]:prevState.productsInCart[productId] + count,
 			}
 		})
 		)

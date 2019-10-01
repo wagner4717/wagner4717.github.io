@@ -30,6 +30,7 @@ const ProductsList = ({
                             capacity={capacity}
                             price={price}
                             addProductToCart={addProductToCart}
+                            id={id}
                         />
                         </div>
                     ))

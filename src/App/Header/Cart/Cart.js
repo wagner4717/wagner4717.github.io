@@ -4,12 +4,12 @@ import productsData from '../../Main/Products/productsData'
 
 import './cart.css'
 
-const productsMap = productsData.reduce((accObj,product)=>({
+/*const productsMap = productsData.reduce((accObj,product)=>({
     ...accObj,
     [product.Id]:product
-}),{})
+}),{})*/
 
-console.log(productsMap)
+
 
 const Cart = ({
     productsInCart,
@@ -19,7 +19,7 @@ const Cart = ({
                 {
                     keys(productsInCart).map((productId) => {
                         return (
-                            <div key={productId}>{productId}: {productsInCart[productId]}</div>
+                            <div key={productId}>{productsData[productId-1].name}: {productsInCart[productId]}</div>
                         )
                 })
             }

@@ -1,6 +1,8 @@
 import React from 'react'
 import {keys} from 'lodash'
+import {Link} from 'react-router-dom'
 import productsData from '../../Main/Products/productsData'
+
 
 import './cart.css'
 
@@ -34,6 +36,7 @@ const Cart = ({
                   
                           $
                 </div>
+                <Link to="/cart">Show cart</Link>
 
             </div>
            

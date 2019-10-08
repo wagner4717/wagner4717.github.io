@@ -16,13 +16,12 @@ const Main = ({
                      Filter
                     </div>
                     <div className="col-lg-9">
-                   {/*<ProductsList
-                         addProductToCart={addProductToCart}
-                   />*/}
-                   <Route path="/" exact component={ProductsList}/>
-                    <Route path="/cart" component={CartPage}/>
-                    <Route path="/payment" component={PaymentPage}/>
-                    <Route path="/shipping" component={ShippingPage} />
+                        <Route path="/" exact rendert={()=>(
+                            <ProductsList addProductToCart={addProductToCart}/>
+                        )}/>
+                        <Route path="/cart" component={CartPage}/>
+                        <Route path="/payment" component={PaymentPage}/>
+                        <Route path="/shipping" component={ShippingPage} />
                     </div>
                 </div>
             </div>

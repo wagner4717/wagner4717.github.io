@@ -3,7 +3,9 @@ import React from 'react'
 
 const ShippingPage = () => {
     return (
-        <div>Shipping Page</div>
+        <div>
+            <h1 className="page-title">Shipping Page</h1>
+        </div>
     )
 }
 export default ShippingPage

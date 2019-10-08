@@ -18,7 +18,7 @@ const Main = ({
                    {/*<ProductsList
                          addProductToCart={addProductToCart}
                    />*/}
-                   <Route path="/" component={ProductsList}/>
+                   <Route path="/" exact component={ProductsList}/>
                     <Route path="/cart" component={CartPage}/>
                     </div>
                 </div>

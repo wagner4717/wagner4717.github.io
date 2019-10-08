@@ -26,7 +26,7 @@ const Cart = ({
                 })
             }
 
-                <div>
+                <div> 
                     Total: 
                          {
                           keys(productsInCart).reduce((total,productId) => (

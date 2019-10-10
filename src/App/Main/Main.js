@@ -3,7 +3,7 @@ import {Route} from 'react-router-dom'
 import ProductsList from './Products/ProductsList'
 import CartPage from './CartPage/CartPage'
 import PaymentPage from './PaymentPage/PaymentPage'
-import ShippingPage from './ShippingPage/ShippingPage'
+import ShippingPage from './Products/ShippingPage/ShippingPage'
 
 const Main = ({
     addProductToCart,

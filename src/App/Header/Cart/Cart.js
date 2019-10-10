@@ -1,20 +1,16 @@
 import React from 'react'
 import {keys} from 'lodash'
 import {Link} from 'react-router-dom'
-import productsData from '../../Main/Products/productsData'
+import productsData, { getProductsMap } from '../../Main/Products/productsData'
 
 
 import './cart.css'
-
-const productsMap = productsData.reduce((accObj,product)=>({
-    ...accObj,
-    [product.id]:product
-}),{})
 
 
 
 const Cart = ({
     productsInCart,
+    productsMap=getProductsMap(productsData),
 }) => {
         return (
             <div className="cart text-center">

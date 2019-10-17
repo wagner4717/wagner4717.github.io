@@ -4,6 +4,7 @@ import productsData, { getProductsMap } from '../../App/Main/Products/productsDa
 import CartProductListItem from './CartProductListItem';
 
 
+
 const CartProductList = ({
     productsInCart,
     productsMap = getProductsMap(productsData),
@@ -18,6 +19,7 @@ const CartProductList = ({
                             product={productsMap[productId]}
                             productCount={productsInCart[productId]}
                             key={productId}
+                            
                         />
                     )
                 })

@@ -1,6 +1,7 @@
 import React from 'react'
 
 import './CartProductListItemExtended.css'
+import QuantityInput from '../../App/Header/Cart/QuantityInput/QuantityInput';
 
 const CartProductListItemExtended = ({
     product,
@@ -28,6 +29,8 @@ const CartProductListItemExtended = ({
                     <p className="cart-extended-sum">
                         Sum for this item: <span className="bold sum-price">$ {(product.price * productCount)} </span>
                     </p>
+                    <QuantityInput
+                    productCount={productCount}/>
                     <button onClick={() => removeProductFromCart(product.id)}>Delete product</button>
                 </div>
             </div>

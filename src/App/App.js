@@ -51,7 +51,6 @@ removeProductFromCart = (productId) => {
 				removeProductFromCart={this.removeProductFromCart}
 				/>
 				<Footer />
-				<button onClick={() => this.removeProductFromCart("1")}>Delete </button>
 			</div>
 		)
 	}

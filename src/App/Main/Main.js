@@ -8,6 +8,7 @@ import ShippingPage from './Products/ShippingPage/ShippingPage'
 const Main = ({
     addProductToCart,
     productsInCart,
+    removeProductFromCart,
 }) => {
     return (
         <main className="main">
@@ -21,7 +22,9 @@ const Main = ({
                             <ProductsList addProductToCart={addProductToCart}/>
                         )}/>
                         <Route path="/cart" render={()=>(
-                            <CartPage productsInCart={productsInCart}/>
+                            <CartPage 
+                            productsInCart={productsInCart}
+                            removeProductFromCart={removeProductFromCart}/>
                         )}/>
                         <Route path="/payment" component={PaymentPage}/>
                         <Route path="/shipping" component={ShippingPage} />

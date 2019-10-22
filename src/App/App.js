@@ -26,8 +26,14 @@ class App extends Component {
 		})
 		)
 	}
-removeProductFromCart = (productId) =>{
-	this.setState((prevState) => )
+removeProductFromCart = (productId) => {
+	this.setState((prevState) => {
+		let prevProductInCart = {...prevState.productsInCart}
+		delete prevProductInCart[productId]
+		return{
+			productsInCart:prevProductInCart
+		}
+	})
 }
 
 
@@ -43,7 +49,7 @@ removeProductFromCart = (productId) =>{
 				productsInCart={this.state.productsInCart}
 				/>
 				<Footer />
-				<button onClick={() => removeProductFromCart(id, this.state.productCount)}>Delete</button>
+				<button onClick={() => this.removeProductFromCart("1")}>Delete </button>
 			</div>
 		)
 	}

@@ -9,7 +9,9 @@ const CartProductList = ({
     productsInCart,
     removeProductFromCart,
     productsMap = getProductsMap(productsData),
-    CartItem=CartProductListItem
+    CartItem=CartProductListItem,
+    incrementClick,
+    decrementClick
     
     
 }) => {
@@ -23,6 +25,8 @@ const CartProductList = ({
                             productCount={productsInCart[productId]}
                             key={productId}
                             removeProductFromCart={removeProductFromCart}
+                            incrementClick={incrementClick}
+                            decrementClick={decrementClick}
 
                             
                         />

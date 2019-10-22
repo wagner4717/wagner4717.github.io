@@ -16,8 +16,6 @@ class App extends Component {
 		}
 	} 
 
-
-
 	addProductToCart = (productId,count) => {
 		this.setState((prevState) => ({
 			productsInCart: {
@@ -27,15 +25,30 @@ class App extends Component {
 		})
 		)
 	}
-removeProductFromCart = (productId) => {
-	this.setState((prevState) =>  ({
-		productsInCart:omit(prevState.productsInCart,[productId])
-		
+	removeProductFromCart = (productId) => {
+		this.setState((prevState) =>  ({
+			productsInCart:omit(prevState.productsInCart,[productId])	
+			}))
 	}
 
-	)
-	)
-}
+	incrementClick = (productId) => {
+		this.setState((prevState) => ({
+			productsInCart: {
+				...prevState.productsInCart,
+				[productId]: prevState.productsInCart[productId]+1
+			}
+		})
+		)
+	}
+	decrementClick =(productId) => {
+		this.setState((prevState) => ({
+			productsInCart: {
+				...prevState.productsInCart,
+				[productId]: prevState.productsInCart[productId] - 1
+			}
+		}))
+	}
+
 
 
 
@@ -49,6 +62,8 @@ removeProductFromCart = (productId) => {
 				addProductToCart = {this.addProductToCart}
 				productsInCart={this.state.productsInCart}
 				removeProductFromCart={this.removeProductFromCart}
+				incrementClick={this.incrementClick}
+				decrementClick={this.decrementClick}
 				/>
 				<Footer />
 			</div>

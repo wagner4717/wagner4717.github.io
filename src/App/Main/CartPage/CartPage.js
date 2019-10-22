@@ -8,6 +8,8 @@ import CartProductListItemExtended from '../../../Components/Cart/CartProductLis
 const CartPage = ({
     productsInCart,
     removeProductFromCart,
+    incrementClick,
+    decrementClick,
 }) => {
     return (
         <div>
@@ -17,6 +19,8 @@ const CartPage = ({
                 productsInCart={productsInCart}
                 CartItem={CartProductListItemExtended}
                 removeProductFromCart={removeProductFromCart}
+                    incrementClick={incrementClick}
+                    decrementClick={decrementClick}
             />
             </div>
             <CartTotal

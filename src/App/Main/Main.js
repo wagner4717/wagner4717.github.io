@@ -9,8 +9,7 @@ const Main = ({
     addProductToCart,
     productsInCart,
     removeProductFromCart,
-    incrementClick,
-    decrementClick,
+    changeProductQuantity
 
 }) => {
     return (
@@ -28,8 +27,7 @@ const Main = ({
                             <CartPage 
                             productsInCart={productsInCart}
                             removeProductFromCart={removeProductFromCart}
-                                incrementClick={incrementClick}
-                                decrementClick={decrementClick}
+                                changeProductQuantity={changeProductQuantity}
                             />
                         )}/>
                         <Route path="/payment" component={PaymentPage}/>

@@ -31,24 +31,14 @@ class App extends Component {
 			}))
 	}
 
-	incrementClick = (productId) => {
+	changeProductQuantity = (productId,count) => {
 		this.setState((prevState) => ({
-			productsInCart: {
+			productsInCart:{
 				...prevState.productsInCart,
-				[productId]: prevState.productsInCart[productId]+1
-			}
-		})
-		)
-	}
-	decrementClick =(productId) => {
-		this.setState((prevState) => ({
-			productsInCart: {
-				...prevState.productsInCart,
-				[productId]: prevState.productsInCart[productId] - 1
+				[productId]:count
 			}
 		}))
 	}
-
 
 
 
@@ -62,8 +52,7 @@ class App extends Component {
 				addProductToCart = {this.addProductToCart}
 				productsInCart={this.state.productsInCart}
 				removeProductFromCart={this.removeProductFromCart}
-				incrementClick={this.incrementClick}
-				decrementClick={this.decrementClick}
+				changeProductQuantity={this.changeProductQuantity}
 				/>
 				<Footer />
 			</div>

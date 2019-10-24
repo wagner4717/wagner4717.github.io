@@ -23,6 +23,20 @@ class ProductListItem extends Component {
         })
         )
     }
+
+    renderLikeButton = () => {
+        const {
+            id,
+            isLike,
+            removeLike,
+            addLike,
+        } = this.props;
+        if(isLike) {
+            removeLike(id)
+        } else{
+           addLike(id)
+        }
+    }
     render() {
         const {
             name,
@@ -33,6 +47,7 @@ class ProductListItem extends Component {
             type,
             addProductToCart,
             id,
+            isLike,
         } = this.props
 
         return (
@@ -40,6 +55,9 @@ class ProductListItem extends Component {
                 <div className="product-image">
                     <img src={image} alt={description} />
                 </div>
+                <button onClick={()=> this.renderLikeButton()}>
+                    {isLike?<span>&#9829;</span>:<span>&#9825;</span>}
+                </button>
                 <div className="product-title">{name}</div>
                 <p className="product-description">{description}</p>
                 <div className="product-features">Type: {type}</div>

@@ -9,7 +9,10 @@ const Main = ({
     addProductToCart,
     productsInCart,
     removeProductFromCart,
-    changeProductQuantity
+    changeProductQuantity, 
+    addLike, 
+    removeLike,
+    isLike
 
 }) => {
     return (
@@ -21,12 +24,17 @@ const Main = ({
                     </div>
                     <div className="col-lg-9">
                         <Route path="/" exact render={()=>(
-                            <ProductsList addProductToCart={addProductToCart}/>
+                            <ProductsList 
+                                addProductToCart={addProductToCart}
+                                addLike={addLike}
+                                removeLike={removeLike}
+                                isLike={isLike}
+                            />
                         )}/>
                         <Route path="/cart" render={()=>(
                             <CartPage 
-                            productsInCart={productsInCart}
-                            removeProductFromCart={removeProductFromCart}
+                                productsInCart={productsInCart}
+                                removeProductFromCart={removeProductFromCart}
                                 changeProductQuantity={changeProductQuantity}
                             />
                         )}/>

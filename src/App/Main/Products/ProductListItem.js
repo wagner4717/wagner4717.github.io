@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
 import PropTypes from 'prop-types';
 import "./ProductListItem.css"
+import QuantityInput from '../../Header/Cart/QuantityInput/QuantityInput';
 
 
 class ProductListItem extends Component {
@@ -22,6 +23,20 @@ class ProductListItem extends Component {
         })
         )
     }
+
+    renderLikeButton = () => {
+        const {
+            id,
+            isLike,
+            removeLike,
+            addLike,
+        } = this.props;
+        if(isLike) {
+            removeLike(id)
+        } else{
+           addLike(id)
+        }
+    }
     render() {
         const {
             name,
@@ -32,6 +47,7 @@ class ProductListItem extends Component {
             type,
             addProductToCart,
             id,
+            isLike,
         } = this.props
 
         return (
@@ -39,22 +55,20 @@ class ProductListItem extends Component {
                 <div className="product-image">
                     <img src={image} alt={description} />
                 </div>
+                <button onClick={()=> this.renderLikeButton()}>
+                    {isLike?<span>&#9829;</span>:<span>&#9825;</span>}
+                </button>
                 <div className="product-title">{name}</div>
                 <p className="product-description">{description}</p>
                 <div className="product-features">Type: {type}</div>
                 <div className="product-features">Capacity: {capacity}G</div>
                 <div className="product-price">Price: {price}$</div> 
-                <div className="quantity-input">
-                    <button 
-                    onClick={()=>this.onDecrementClick()}
-                    disabled={this.state.productCount <= 1}
-                    >-</button>
-                    <input type="text" value={this.state.productCount} readOnly/>
-                    <button 
-                    onClick={()=>this.onIncrementClick()}
-                    disabled={this.state.productCount >= 10}
-                    >+</button>
-                </div>
+                <QuantityInput
+                onDecrementClick={this.onDecrementClick}
+                productCount={this.state.productCount}
+                onIncrementClick={this.onIncrementClick}
+                minCount={1}
+                />
                 <button className="btn btn-add-to-cart"
                     onClick={() => addProductToCart(id,this.state.productCount)}
                 > Add to cart</button>

@@ -1,4 +1,5 @@
 import React, {Component} from 'react'
+import {omit} from 'lodash'
 
 import './../common/style/reset.css'
 import './../common/style/base.css'
@@ -12,10 +13,12 @@ class App extends Component {
 		productsInCart:{
 			"1":1,
 			"2":1,
+		},
+		isLike: {
+			"1":false, 
+			"2":true,
 		}
 	} 
-
-
 
 	addProductToCart = (productId,count) => {
 		this.setState((prevState) => ({
@@ -26,14 +29,38 @@ class App extends Component {
 		})
 		)
 	}
-removeProductFromCart = (productId) =>{
-	this.setState((prevState) => ({
-		productsInCart:{
-			_.omit(productsInCart,[productId])}
-	})
-	)
-}
 
+	removeProductFromCart = (productId) => {
+		this.setState((prevState) =>  ({
+			productsInCart:omit(prevState.productsInCart,[productId])	
+			}))
+	}	
+
+	changeProductQuantity = (productId,count) => {
+		this.setState((prevState) => ({
+			productsInCart:{
+				...prevState.productsInCart,
+				[productId]:count
+			}
+		}))
+	}
+
+	addLike = (productId) => {
+		this.setState((prevState) => ({
+			isLike:{
+				...prevState.isLike,
+				[productId]:true,
+			}
+		}))
+	}
+	removeLike = (productId) => {
+		this.setState((prevState) => ({
+			isLike: {
+				...prevState.isLike,
+				[productId]:false,
+			}
+		}))
+	}
 
 
 	render(){
@@ -45,9 +72,13 @@ removeProductFromCart = (productId) =>{
 				<Main
 				addProductToCart = {this.addProductToCart}
 				productsInCart={this.state.productsInCart}
+				removeProductFromCart={this.removeProductFromCart}
+				changeProductQuantity={this.changeProductQuantity}
+				addLike={this.addLike}
+				removeLike={this.removeLike}
+				isLike={this.state.isLike}
 				/>
 				<Footer />
-				<button onClick={() => removeProductFromCart(id, this.state.productCount)}>Delete</button>
 			</div>
 		)
 	}

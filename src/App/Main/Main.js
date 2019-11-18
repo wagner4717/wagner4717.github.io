@@ -8,6 +8,12 @@ import ShippingPage from './Products/ShippingPage/ShippingPage'
 const Main = ({
     addProductToCart,
     productsInCart,
+    removeProductFromCart,
+    changeProductQuantity, 
+    addLike, 
+    removeLike,
+    isLike
+
 }) => {
     return (
         <main className="main">
@@ -18,10 +24,19 @@ const Main = ({
                     </div>
                     <div className="col-lg-9">
                         <Route path="/" exact render={()=>(
-                            <ProductsList addProductToCart={addProductToCart}/>
+                            <ProductsList 
+                                addProductToCart={addProductToCart}
+                                addLike={addLike}
+                                removeLike={removeLike}
+                                isLike={isLike}
+                            />
                         )}/>
                         <Route path="/cart" render={()=>(
-                            <CartPage productsInCart={productsInCart}/>
+                            <CartPage 
+                                productsInCart={productsInCart}
+                                removeProductFromCart={removeProductFromCart}
+                                changeProductQuantity={changeProductQuantity}
+                            />
                         )}/>
                         <Route path="/payment" component={PaymentPage}/>
                         <Route path="/shipping" component={ShippingPage} />

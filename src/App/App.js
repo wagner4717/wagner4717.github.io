@@ -11,8 +11,6 @@ import Footer from './Footer/Footer'
 class App extends Component {
 	state = {
 		productsInCart:{
-			"1":1,
-			"2":1,
 		},
 		isLike: {
 			"1":false, 
@@ -70,19 +68,18 @@ class App extends Component {
 					productsInCart = {this.state.productsInCart}
 					/>
 				<Main
-				addProductToCart = {this.addProductToCart}
-				productsInCart={this.state.productsInCart}
-				removeProductFromCart={this.removeProductFromCart}
-				changeProductQuantity={this.changeProductQuantity}
-				addLike={this.addLike}
-				removeLike={this.removeLike}
-				isLike={this.state.isLike}
+					addProductToCart = {this.addProductToCart}
+					productsInCart={this.state.productsInCart}
+					removeProductFromCart={this.removeProductFromCart}
+					changeProductQuantity={this.changeProductQuantity}
+					addLike={this.addLike}
+					removeLike={this.removeLike}
+					isLike={this.state.isLike}
 				/>
 				<Footer />
 			</div>
 		)
 	}
 }
-
 
 export default App
